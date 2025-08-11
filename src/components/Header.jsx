@@ -7,7 +7,7 @@ export default function Header() {
     const navigate = useNavigate()
     // console.log(location.pathname)
 
-    function pathMathRoute(route) {
+    function pathMatchRoute(route) {
         if (route === location.pathname) {
             return true
         }
@@ -23,13 +23,40 @@ export default function Header() {
     {/* Menu Section */}
     <div>
         <ul className='flex space-x-10'>
-            <li className={`cursor-pointer py-3 text-sm uppercase font-semibold text-gray-400 border-b-4 border-b-transparent ${pathMathRoute("/") && "text-black border-b-red-600"}`} onClick={()=>navigate("/")}>
-            Home</li>
-            <li className={`cursor-pointer py-3 text-sm uppercase font-semibold text-gray-400 border-b-4 border-b-transparent ${pathMathRoute("/offers") && "text-black border-b-red-600"}`} onClick={()=>navigate("/offers")}>
-                Offers</li>
-            <li className={`cursor-pointer py-3 text-sm uppercase font-semibold text-gray-400 border-b-4 border-b-transparent ${pathMathRoute("/sign-in") && "text-black border-b-red-600"}`} onClick={()=>navigate("/sign-in")}>
-                Sign In</li>
             
+            <li
+  className={`cursor-pointer py-3 text-sm uppercase font-semibold border-b-4 
+    ${pathMatchRoute("/") 
+      ? "text-black border-b-red-600" 
+      : "text-gray-400 border-b-transparent hover:text-black hover:border-b-red-600"
+    }`}
+  onClick={() => navigate("/")}
+>
+  Home
+</li>
+
+<li
+  className={`cursor-pointer py-3 text-sm uppercase font-semibold border-b-4 
+    ${pathMatchRoute("/offers") 
+      ? "text-black border-b-red-600" 
+      : "text-gray-400 border-b-transparent hover:text-black hover:border-b-red-600"
+    }`}
+  onClick={() => navigate("/offers")}
+>
+  Offers
+</li>
+
+<li
+  className={`cursor-pointer py-3 text-sm uppercase font-semibold border-b-4 
+    ${pathMatchRoute("/sign-in") 
+      ? "text-black border-b-red-600" 
+      : "text-gray-400 border-b-transparent hover:text-black hover:border-b-red-600"
+    }`}
+  onClick={() => navigate("/sign-in")}
+>
+  Sign In
+</li>
+
         </ul>
     </div>
     </header>
