@@ -6,12 +6,13 @@ import SignIn from './pages/SignIn.jsx'
 import Offers from './pages/Offers.jsx'
 import ForgotPassword from './pages/ForgotPassword.jsx'
 
-
+import Header from './components/Header.jsx'
 
 function App() {
   return (
     <>
     <Router>
+      <Header/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/profile' element={<Profile/>} />
