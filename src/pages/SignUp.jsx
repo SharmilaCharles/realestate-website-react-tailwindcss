@@ -74,8 +74,6 @@ export default function SignUp() {
             className='mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out' 
             />
 
-           
-
             <div className='relative mb-6 '> 
             <input type={showPassword ? "text" : "password"} 
             id="password" 
