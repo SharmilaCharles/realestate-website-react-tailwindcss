@@ -81,7 +81,7 @@ export default function Profile() {
         (listing) => listing.id !== listingID
       );
       setListings(updatedListings)
-      toast.success("Deleted Sucessfully")
+      toast.success("Deleted Successfully")
     }
   }
 
